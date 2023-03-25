@@ -1,0 +1,36 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch WebExtension",
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "addonPath": "${workspaceFolder}/annotate-page" ,
+            "addonId": "addon_id"
+        }
+    ]
+}
+
+
+
+
+// {
+//     "version": "0.2.0",
+//     "configurations": [
+//       {
+//         "type": "firefox-addon",
+//         "request": "launch",
+//         "name": "Debug Firefox Addon",
+//         "firefoxExecutable": "C:/Program Files/Mozilla Firefox/firefox.exe",
+//         "addonPath": "c:/exten/tools",
+//         "addonId": "addon_id",
+//         "preLaunchTask": "build",
+//         "webExtArgs": ["--source-dir", "./src"]
+//       }
+//     ]
+//   }
+
+//   其中，addonPath 选项指定插件的路径，addonId 选项指定插件的 ID， firefoxExecutable 选项指定 Firefox 可执行文件的路径。preLaunchTask 选项可以指定调试任务前要执行的构建任务。webExtArgs选项中的 --source-dir是指定插件源代码的目录，可以根据需要进行修改。
+
+//如果插件在 Firefox 中已经安装并启用，可以将 addonPath 和 addonId 选项省略，只需在 Firefox 中启用调试模式即可进行调试。
