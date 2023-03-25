@@ -6,8 +6,7 @@
             "type": "firefox",
             "request": "launch",
             "reAttach": true,
-            "addonPath": "${workspaceFolder}/annotate-page" ,
-            "addonId": "addon_id"
+            "addonPath": "${workspaceFolder}/a-my-extention" 
         }
     ]
 }
