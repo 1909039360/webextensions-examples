@@ -6,7 +6,7 @@
             "type": "firefox",
             "request": "launch",
             "reAttach": true,
-            "addonPath": "${workspaceFolder}/a-my-extention" 
+            "addonPath": "${workspaceFolder}/a-my-adf-operator" 
         }
     ]
 }

@@ -11,7 +11,11 @@ popup 页面设计
     2 数据处理 
         完成
     3 数据填充 
-        读取一条数据,然后删除一条数据
+        读取一条数据,然后删除一条数据 
+
+    修改方案 
+        用下拉框显示 
+        
 
 child_dws_sellout fact_sellout_actual
 child_dws_sellout fact_sellout_actual
