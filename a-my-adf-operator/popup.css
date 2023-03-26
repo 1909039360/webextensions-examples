@@ -2,70 +2,109 @@ html, body {
     width: 300px;
     height: 400px;
     overflow: hidden;
+    background-color: rgba(245, 196, 243, 0.5);
   }
 
 .hidden {
     display: none;
   }
-  
-  button {
+
+
+  #btn-div {
+    position: absolute;
+    width: 90%;
+    left: 55%;
+    transform: translateX(-50%);
+    bottom: 10px;
+  }
+  .btn {
     border: 1px;
-    width: 100%;
+    width: 45%;
     margin: 3% auto;
     left: 3% auto;
-    padding: 2px;
+    /* padding: 2px; */
     text-align: center;
     font-size: 1.5em;
     cursor: pointer;
-    background-color: #E5F2F2;
     display: inline-block;
+    border-radius: 8px;
+    background-color: rgba(229, 98, 249, 0.5);
+    color: #fff;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
   }
-
+  h3 {
+    text-align: center;
+  }
   textarea {
-    width: 90%!;
-    height: 90%!;
+    position: absolute;
+    width: 90%;
+    height: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 15%;
+    
+    /* width: 100%!;
+    height: 90%!; */
     padding: 10px;
-    top: 10px;
-    left: 10px;
-    border: 1px solid #adabab;
-    font-size: 16px;
+    /* border: 1px solid #adabab; */
+    font-size: 14px;
     line-height: 1.5;
+    border: none;
+  } 
+
+
+
+  .btn:hover {
+    background-color: rgba(251, 130, 150, 0.8);
+  }
+  
+  .btn:active {
+    background-color: rgb(253, 92, 253);
+    color: #fff;
+  }
+  
+
+
+  .radio-label i{
+    display: inline-block;
+    width:25px;
+    height: 25px;
+    border: 0.5px solid #ccc;
+    cursor: pointer;
+    border-radius: 50%;
+    vertical-align: middle;
   }
 
-  button:hover {
-    background-color: #CFF2F2;
+  .radio-label input:checked+i{
+    border-color: lightblue;
   }
-  
-  button[type="reset"] {
-    background-color: #FBFBC9;
-  }
-  
-  button[type="reset"]:hover {
-    background-color: #EAEA9D;
-  }
-/* 单选框样式 */
-input[type="radio"] {
+
+ 
+.radio-label input:checked+i::after{
+ display: block;
+  content: "\2714";
+  text-align: center;
+  border-radius: 50%;
+  background: lightblue;
+  font-size: 15px;
+  color: aqua;
+  padding-right: 3px;
+  vertical-align: middle;
+}
+
+
+.radio-label input{
   display: none;
 }
 
-/* 标签样式 */
-label {
+
+.radio-label {
   display: inline-block;
+  position: relative;
   margin-right: 10px;
-  padding: 5px 10px;
-  font-size: 16px;
-  color: #d03b3b;
-  border: 2px solid #d7d5d5;
-  border-radius: 5px;
   cursor: pointer;
+  font-size: 15px;
+  line-height: 24px;
+  color: #333;
 }
-
-/* 选中状态下的标签样式 */
-input[type="radio"]:checked + label {
-  background-color: #059927;
-}
-
-  
-  
-
-  

@@ -1,0 +1,77 @@
+/* .radio i{
+  width: 12px;
+  height: 12px;
+  border: 0.5px solid #999;
+  cursor: pointer;
+  border-radius: 50%;
+  display: inline-block;
+} */
+
+.radio i{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 0.5px solid #ccc;
+  cursor: pointer;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.checkbox i{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 0.5px solid #ccc;
+  cursor: pointer;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.radio input:checked+i{
+  border-color: lightblue;
+}
+/* .radio input:checked+i::after{
+  content: "";
+  display: block;
+  width: 7px;
+  height: 7px;
+  background: lightblue;
+  margin-left: 2.5px;
+  margin-top: 2.5px;
+  border-radius: 50%;
+} */
+
+.radio input:checked+i::after{
+ display: block;
+  content: "\2714";
+  text-align: center;
+  border-radius: 50%;
+  background: lightblue;
+  color: #fff;
+  font-size: 15px;
+  padding-right: 3px;
+  vertical-align: middle;
+}
+
+.checkbox input:checked+i{
+  border-color: lightblue;
+}
+.checkbox input:checked+i::after{
+  display: block;
+  content: "\2714";
+  text-align: center;
+  border-radius: 50%;
+  background: lightblue;
+  color: #fff;
+  font-size: 15px;
+  padding-right: 3px;
+  vertical-align: middle;
+}
+
+
+.radio input{
+  display: none;
+}
+.checkbox input{
+  display: none;
+}

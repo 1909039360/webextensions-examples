@@ -24,6 +24,13 @@ child_dws_sellout fact_sellout_actual
 child_dws_sellout fact_sellout_actual
 
 
+margin：层的边框以外留的空白
+background-color：背景颜色
+background-image：背景图片
+padding：层的边框到层的内容之间的空白 
+border：边框 
+content：内容 
+
 
 const data = `child_dws_sellout fact_sellout_actual
 child_dws_sellout fact_sellout_actual
