@@ -9,9 +9,7 @@
   "permissions": [
     "activeTab",
     "tabs",
-    "storage",
-    "cookies",
-    "<all_urls>"
+    "storage"
   ],
   "background": {
     "scripts": ["background.js"],

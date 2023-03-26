@@ -17,11 +17,11 @@ popup 页面设计
         用下拉框显示 
         
 
-child_dws_sellout fact_sellout_actual
-child_dws_sellout fact_sellout_actual
-child_dws_sellout fact_sellout_actual
-child_dws_sellout fact_sellout_actual
-child_dws_sellout fact_sellout_actual
+child_dws_sellout fact_sellout_actual1
+child_dws_sellout fact_sellout_actual2
+child_dws_sellout fact_sellout_actual3
+child_dws_sellout fact_sellout_actual4
+child_dws_sellout fact_sellout_actual5
 
 
 margin：层的边框以外留的空白

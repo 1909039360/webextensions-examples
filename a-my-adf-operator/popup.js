@@ -15,9 +15,24 @@ window.onload = function() {
         if(textareaStr === ""){
             browser.storage.local.get('metaData').then((result) => {
 
-                 document.getElementById("echo").innerHTML ="请选中pipeline:";
-                 console.log('已经读取到历史数据', result["metaData"]);
+                document.getElementById("echo").innerHTML ="请选中pipeline:";
+                //  console.log('已经读取到历史数据', result["metaData"]);
                 generateRadioButtons("radio-buttons", result["metaData"]);
+                // 获取单选框元素
+                const radios = document.querySelectorAll('input[type="radio"]');
+                
+                console.log(radios.innerHTML)
+
+                // 为每个单选框添加事件监听器
+                for (let i = 0; i < radios.length; i++) {
+                  radios[i].addEventListener('click', function() {
+                    // 发送一个消息给 content 脚本
+                    var str = this.value;
+                    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+                      chrome.tabs.sendMessage(tabs[0].id, { action: "radio-selected", value: str});
+                    });
+                  });
+                }
             }).catch((error) => {
                 console.error('读取历史数据出错', error);
             });
@@ -25,6 +40,21 @@ window.onload = function() {
           var metaData = convertToJSON(textareaStr);
           document.getElementById("echo").innerHTML ="请选中pipeline:";
           generateRadioButtons("radio-buttons",metaData);
+          // 获取单选框元素
+          const radios = document.querySelectorAll('input[type="radio"]');
+
+          console.log(radios.innerHTML)
+
+          // 为每个单选框添加事件监听器
+          for (let i = 0; i < radios.length; i++) {
+            radios[i].addEventListener('click', function() {
+              // 发送一个消息给 content 脚本
+              console.log(this.value);
+              chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+                chrome.tabs.sendMessage(tabs[0].id, { action: "radio-selected", value: this.value});
+              });
+            });
+          }
           saveData('metaData', metaData)
               .then(() => {
                   console.log('Data saved successfully');
@@ -41,21 +71,29 @@ window.onload = function() {
 
     // 当用户点击提交按钮时，向当前页面发送点击登录按钮的消息
     document.getElementById("btnSubmit").addEventListener("click", function() {
+        console.log('-----------------------');
         chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
             chrome.tabs.sendMessage(tabs[0].id, {action: "clickLoginButton"});
         });
 
-        let value;
-        browser.storage.local.get('metaData').then((result) => {
-            value = result ;
-            console.log('读取到的数据A', value);
-            return;
-        }).catch((error) => {
-            console.error('读取数据出错', error);
-        });
+        // chrome.runtime.sendMessage({ action: 'clickLoginButton' }, function(response) {
+        //   console.log('Received response:', response);
+        // });
+
+        // let value;
+        // browser.storage.local.get('metaData').then((result) => {
+        //     value = result ;
+        //     console.log('读取到的数据A', value);
+        //     return;
+        // }).catch((error) => {
+        //     console.error('读取数据出错', error);
+        // });
         // 这里是异步的所以前面还没保存完后面就被执行了。
 
     });
+
+
+    
 
     
 };
@@ -138,8 +176,8 @@ function moveCursorToBeginning() {
       parent.appendChild(label);
       parent.appendChild(document.createElement("br"));
     }
-    console.log(parent.innerHTML);
+    // console.log(parent.innerHTML);
   }
   
   // 调用函数
-  generateRadioButtons("radio-buttons", ["child_dws_sellout", "fact_sellout_actual"]);
+  //generateRadioButtons("radio-buttons", ["child_dws_sellout", "fact_sellout_actual"]);
